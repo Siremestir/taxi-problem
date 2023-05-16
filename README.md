@@ -23,3 +23,6 @@ For example, a 3x2 grid will have these indexes:
 | 4 \|| 5 \|| 6 |
 
 To configure vertical walls, indicate the index of the case at the right of the wall with the value "right". Similarly, to configure horizontal walls, indicate the index of the case above the wall with the value "down".
+
+Execute with
+``python3 main-VI.py``
