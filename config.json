@@ -1,0 +1,16 @@
+{
+    "width": 5,
+    "height": 5,
+    "passenger": {
+        "origin": 23,
+        "destination" : 4
+    },
+    "walls": {
+        "1" : "right",
+        "6" : "right",
+        "15" : "right",
+        "17" : "right",
+        "20" : "right",
+        "22" : "right"
+    }
+}
