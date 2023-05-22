@@ -28,7 +28,6 @@ def valueIteration(states, actions, transitions, rewards, epsilon, gamma):
     return V
 
 
-# TO BE COMPLETED
 def pi(state, actions, transitions, rewards, gamma, previous_iteration):
     action_values = dict()
     for action in actions:

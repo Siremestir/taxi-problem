@@ -1,8 +1,9 @@
-import valueIteration
+import qLearning
 import gameGrid as game
 
-epsilon = 0.1
+epsilon = 0.4
 gamma = 0.99
+alpha = 0.1
 
 print("\n----------------------------")
 print("Simple MDP")
@@ -32,18 +33,18 @@ print("\n----------------------------")
 print("END MDP model")
 print("----------------------------\n")
 
-# Run Value Iteration
+# Run Q-Learning
 print("\n----------------------------")
-print("ITERATIONS OF MDP VALUE ITERATION")
+print("LEARNING THE Q TABLE")
 print("----------------------------\n")
-VI = valueIteration.valueIteration(game.states, game.actions, game.transitions, game.rewards, epsilon, gamma)
+q_table, epochs, penalties = qLearning.q_train(game.states, game.actions, game.transitions, game.rewards, game.isEnd, epsilon, gamma, alpha, "s0")
 
-# Run a complete episode from initial state to end state following the optimal policy
+# Run a complete episode from initial state to end state
 print("\n----------------------------")
-print("OPTIMAL POLICY À PARTIR DE S0")
+print("POLICY À PARTIR DE S0")
 print("----------------------------\n")
-valueIteration.playEpisode("s0", game.isEnd, VI, game.actions, game.transitions, game.rewards, gamma)
+qLearning.play_episode("s0", game.isEnd, q_table, game.transitions, game.rewards, gamma, alpha)
 print("\n----------------------------")
-print("OPTIMAL POLICY À PARTIR DE S20")
+print("POLICY À PARTIR DE S20")
 print("----------------------------\n")
-valueIteration.playEpisode("s20", game.isEnd, VI, game.actions, game.transitions, game.rewards, gamma)
+qLearning.play_episode("s20", game.isEnd, q_table, game.transitions, game.rewards, gamma, alpha)
