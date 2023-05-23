@@ -16,8 +16,8 @@ Current implementation only allows for one passenger.
 All relevant code is contained in the following python files.
 
  - **gameGrid**: Problem modelization. Contains the state space, the action space, the transition function, the rewards function, and the isEnd function.
- - **qLearning**:
- - **main-Q**:
+ - **qLearning**: Heart of the code, contains all of the utils and main functions for training and solivng the problem.
+ - **main-Q**: Main script, with all parameters. Calls the functions in qLearning.py in order.
 
 main-VI.py and valueIteration.py are only here as debug tools, to confirm the modelization is correct and find the optimal policy when a human cannot.
 
